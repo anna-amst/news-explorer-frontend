@@ -7,8 +7,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
   visibility: hidden;
 }
+
 
 .modal_opened {
   visibility: visible;
@@ -16,18 +18,26 @@
 
 .modal__close {
   position: absolute;
-  top: 20px;
-  right: 28px;
-  background-image: url(../../assets/icons/black/back.svg);
+  background-size: contain;
+  bottom: calc(100% + 1px);
+  left: calc(100% + 1px);
+  background: transparent url("../../assets/icons/black/back.svg") no-repeat
+    center;
+  border: none;
+  outline: none;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  padding: 0;
 }
 
 .modal__content {
   width: 100%;
-  max-width: 496px;
+  max-width: 430px;
   box-sizing: border-box;
   background-color: #ffff;
   position: relative;
-  padding: 28px 28px 36px;
+  padding: 34px 36px 28px;
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 20px;
   display: flex;
@@ -45,7 +55,20 @@
   opacity: 0px;
 }
 
+.modal__title {
+  margin: 0;
+  font-family: "Roboto";
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 28.13px;
+  text-align: left;
+  margin-bottom: 22px;
+  padding: 0;
+}
+
 .modal__label {
+  font-family: "Inter";
+
   color: rgba(47, 113, 229, 1);
   font-size: 12px;
   font-weight: 400;
@@ -54,40 +77,49 @@
 }
 
 .modal__input {
-    width: 100%;
-    display: block;
-    font-size: 16px;
-    border: none;
-    border-bottom: 1px solid black;
-    margin: 3px 0 24px;
-    padding: 0;
+  font-family: "Inter";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.94px;
+  text-align: left;
+  width: 100%;
+  display: block;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 1);
+  margin: 0 0 41px;
+  padding: 10px 0 10px;
+  color: black;
 }
 
 .modal__sign-in-button {
   width: 360px;
   height: 64px;
   border: none;
-  border-radius: 100px 0px 0px 0px;
-  opacity: 0px;
+  border-radius: 100px;
   color: rgba(182, 188, 191, 1);
-  background-color: rgba(47, 113, 229, 1);
-  ;
+  background-color: rgba(230, 232, 235, 1);
+  padding: 0;
+  margin-bottom: 16px;
 }
 
-.modal__sign-in-button:hover{
-
+/* .modal__sign-in-button:hover {
 }
 
-.modal__sign-in-button:disabled{
-    background-color: rgba(14, 26, 57, 0.2);
-}
+.modal__sign-in-button:disabled {
+  background-color: rgba(14, 26, 57, 0.2);
+} */
 
-modal__sign-up-button {
+.modal__sign-up-button {
   margin: 0;
   outline: none;
   border: none;
   background: none;
   padding: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.94px;
+  text-align: center;
+  font-family: "Inter";
   font-size: 14px;
   font-weight: 400;
   line-height: 16.94px;

@@ -1,11 +1,11 @@
 import "./ModalWithForm.css";
 
-function ModalWithForm() {
+function ModalWithForm({isOpen, closeModal}) {
   return (
-    <div className="modal">
+    <div className={`modal ${isOpen ? "modal_opened" : ""}`}>
       <div className="modal__content">
         <h2 className="modal__title">Sign In</h2>
-        <button type="button" className="modal__close"></button>
+        <button type="button" className="modal__close" onClick={closeModal}></button>
         <form className="modal__form">
           <label htmlFor="email" className="modal__label">
             Email
@@ -18,13 +18,14 @@ function ModalWithForm() {
               name="email"
             ></input>
           </label>
-          <label htmlFor="password" className="modal__label">
+          <label htmlFor="password" className="modal__label">Password
             <input
               type="text"
               className="modal__input"
               id="password"
               required
               name="password"
+              placeholder="••••••••"
             ></input>
           </label>
         </form>
