@@ -1,29 +1,4 @@
 .searchform {
-  padding: 80px 416px;
-}
-
-.searchform__title {
-  max-width: 608px;
-  font-family: "Roboto Slab";
-  font-size: 60px;
-  font-weight: 400;
-  line-height: 64px;
-  text-align: left;
-  margin: 0;
-}
-
-.searchform__text {
-  font-family: "Roboto";
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 24px;
-  text-align: left;
-  padding-top: 32px;
-  padding-bottom: 88px;
-  margin: 0;
-}
-
-.searchform__form {
   position: relative;
   display: flex;
   justify-content: center;

@@ -3,6 +3,8 @@ import SearchForm from "../SearchForm/SearchForm";
 import About from "../About/About";
 import "./App.css";
 import Footer from "../Footer/Footer";
+import ModalWithForm from "../ModalWithForm/ModalWithForm";
+import Main from "../Main/Main";
 
 function App() {
 
@@ -12,13 +14,15 @@ function App() {
       <div className="page__content">
         <div className="page__background">
      <Header />
-     <SearchForm />
+     <Main />
      </div>
      <About />
      <Footer />
      </div>
      </div>
+     <ModalWithForm />
     </>
+
   );
 }
 

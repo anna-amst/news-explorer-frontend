@@ -37,9 +37,17 @@
 
 .footer__navigation-home {
   margin: 0;
+  outline: none;
+  border: none;
+  background: none;
+  padding: 0;
 }
 .footer__navigation-tripleten {
   margin: 0;
+  outline: none;
+  border: none;
+  background: none;
+  padding: 0;
 }
 
 .footer__icons {
