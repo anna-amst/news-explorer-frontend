@@ -3,14 +3,15 @@ import NewsCard from "../NewsCard/NewsCard";
 
 function NewsCardList() {
     return(
-        <>
-        <h1 className="title">Search results</h1>
-        <div className="cardlist">
+        <div className="newscards__section">
+        <h1 className="newscards__title">Search results</h1>
+        <div className="newscards__list">
             <NewsCard />
             <NewsCard />
             <NewsCard />
         </div>
-        </>
+        <button type="button" className="newscards__button">Show more</button>
+        </div>
     )
 }
 

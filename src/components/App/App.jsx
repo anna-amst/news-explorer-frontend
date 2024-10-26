@@ -8,10 +8,12 @@ import Main from "../Main/Main";
 import "./App.css";
 import NewsCard from "../NewsCard/NewsCard";
 import NewsCardList from "../NewsCardList/NewsCardList";
+import SavedNews from "../SavedNews/SavedNews";
+import NothingFound from "../NotFound/NotFound";
 
 function App() {
   const [activeModal, setActiveModal] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   const openModal = () => {
     setActiveModal(true);
@@ -29,6 +31,7 @@ function App() {
             <Header openModal={openModal} isLoggedIn={isLoggedIn}/>
             <Main />
           </div>
+          <SavedNews />
           <NewsCardList />
           <About />
           <Footer />

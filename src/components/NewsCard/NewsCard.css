@@ -6,6 +6,10 @@
   position: relative;
 }
 
+.card__info{
+    margin: 0 24px 24px;
+}
+
 .card__bookmark {
   position: absolute;
   top: 24px;
@@ -72,5 +76,4 @@
   text-align: left;
   padding: 0;
   color: rgba(182, 188, 191, 1);
-  margin-bottom: 24px;
 }
