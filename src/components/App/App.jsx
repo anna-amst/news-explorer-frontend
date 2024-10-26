@@ -11,6 +11,7 @@ import NewsCardList from "../NewsCardList/NewsCardList";
 
 function App() {
   const [activeModal, setActiveModal] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const openModal = () => {
     setActiveModal(true);
@@ -25,7 +26,7 @@ function App() {
       <div className="page">
         <div className="page__content">
           <div className="page__background">
-            <Header openModal={openModal} />
+            <Header openModal={openModal} isLoggedIn={isLoggedIn}/>
             <Main />
           </div>
           <NewsCardList />
