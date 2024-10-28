@@ -8,7 +8,6 @@
   align-items: center;
   gap: 42px;
   padding-right: 30px;
-  padding-bottom: 26px;
   position: relative;
 }
 
@@ -22,7 +21,11 @@
   border: none;
   background: none;
   color: #fff;
-  padding: 0;
+  padding: 0 0 26px;
+}
+
+.navigation__home:active{
+  border-bottom: 2px solid white;
 }
 
 .navigation__signin {
@@ -50,13 +53,15 @@
   border: none;
   background: none;
   color: rgba(182, 188, 191, 1);
-  padding: 0;
+  padding: 0 0 26px;
+}
+
+.navigation__saved-articles:active{
+  border-bottom: 2px solid white;
 }
 
 .navigation__logout {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  
   font-family: "Roboto";
   font-size: 18px;
   font-weight: 500;
@@ -81,16 +86,4 @@
   text-decoration: none;
   padding: 0;
   margin: 0;
-}
-
-.navigation__slider{
-    position: absolute;
-    top: 102px;
-    right: 236px;
-    width: 68px;
-    height: 3px;
-    border: none;
-    color: rgba(255, 255, 255, 1);
-    padding: 0;
-    margin-top: 0;
 }

@@ -6,10 +6,8 @@ import Footer from "../Footer/Footer";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import Main from "../Main/Main";
 import "./App.css";
-import NewsCard from "../NewsCard/NewsCard";
 import NewsCardList from "../NewsCardList/NewsCardList";
 import SavedNews from "../SavedNews/SavedNews";
-import NothingFound from "../NotFound/NotFound";
 
 function App() {
   const [activeModal, setActiveModal] = useState(false);

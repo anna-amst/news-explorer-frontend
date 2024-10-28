@@ -6,7 +6,6 @@ function Header({openModal, isLoggedIn}) {
     <header className="header">
       <h1 className="header__title">News Explorer</h1>
       <Navigation openModal={openModal} isLoggedIn={isLoggedIn} />
-      {/* <button className="header__button" type="button"></button> */}
     </header>
   );
 }
