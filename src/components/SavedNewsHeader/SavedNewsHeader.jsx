@@ -1,4 +1,5 @@
 import "./SavedNewsHeader.css";
+import Navigation from "../Navigation/Navigation";
 
 function SavedNewsHeader({openModal, isLoggedIn}) {
     return(

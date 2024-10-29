@@ -1,4 +1,5 @@
 import "./Footer.css";
+import githubIcon from "../../assets/github.svg";
 
 function Footer() {
   return (
@@ -10,7 +11,7 @@ function Footer() {
           <button className="footer__navigation-tripleten">TripleTen</button>
         </div>
         <div className="footer__icons">
-          <img className="footer__github" />
+          <img src={githubIcon} className="footer__github" />
           <img className="footer__facebook" />
         </div>
       </div>
