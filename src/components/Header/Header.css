@@ -1,9 +1,8 @@
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: stretch;
   border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-  /* position: relative; */
 }
 
 .header__title {
