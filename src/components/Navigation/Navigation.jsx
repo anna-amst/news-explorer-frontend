@@ -1,8 +1,9 @@
 import { useState } from "react";
 import "./Navigation.css";
 import logoutIcon from "../../assets/logout.svg";
+import mobileMenuIcon from "../../assets/menu.svg";
 
-function Navigation({ openModal, isLoggedIn }) {
+function Navigation({ handleLoginClick, isLoggedIn }) {
   return (
     <div className="navigation">
       <div className="navigation__buttons">
@@ -18,16 +19,13 @@ function Navigation({ openModal, isLoggedIn }) {
             </button>
           </>
         ) : (
-          <button className="navigation__signin" onClick={openModal}>
+          <button className="navigation__signin" onClick={handleLoginClick}>
             Sign In
           </button>
         )}
         </div>
-        <div className="navigation__mobile">
-          <span className="navigation__mobile-span"></span>
-          <span className="navigation__mobile-span"></span>
+        <img src={mobileMenuIcon} className="navigation__mobile" />
       </div>
-    </div>
   );
 }
 

@@ -94,23 +94,17 @@
   display: none;
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (min-width: 320px) and (max-width: 613px) {
+  .navigation{
+    padding-right: 16px;
+  }
+  
   .navigation__buttons{
     display: none;
   }
   .navigation__mobile{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 4px;
+    display: block;
     width: 24px;
-    height: 24px;
-  }
-
-  .navigation__mobile-span{
-    width: 16px;
-height: 2px;
-color: white;
   }
   
 }
