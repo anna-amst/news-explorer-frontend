@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { BrowserRouter } from "react-router-dom";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 
 import Header from "../Header/Header";
 import About from "../About/About";
@@ -14,7 +14,14 @@ import SavedNews from "../SavedNews/SavedNews";
 
 function App() {
   const [activeModal, setActiveModal] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isSearching, setIsSearching] = useState(false); // to track if the search started
+  const navigate = useNavigate();
+
+  const handleSearch = () => {
+    setIsSearching(true);
+    navigate('/saved-news');
+  }
 
   const openModal = () => {
     setActiveModal(true);
@@ -26,7 +33,6 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
         <div className="page">
           <div className="page__content">
             
@@ -37,7 +43,7 @@ function App() {
                     <>
                     <div className="page__background">
                       <Header openModal={openModal} isLoggedIn={isLoggedIn} />
-                      <Main />
+                      <Main onSearch={handleSearch}/>
                       </div>
                       <About />
                     </>
@@ -60,7 +66,6 @@ function App() {
         {activeModal && (
           <ModalWithForm isOpen={activeModal} closeModal={closeModal} />
         )}
-      </BrowserRouter>
     </>
   );
 }

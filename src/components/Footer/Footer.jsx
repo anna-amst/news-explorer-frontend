@@ -1,5 +1,6 @@
 import "./Footer.css";
 import githubIcon from "../../assets/github.svg";
+import facebookIcon from "../../assets/facebook_icon.svg";
 
 function Footer() {
   return (
@@ -12,7 +13,7 @@ function Footer() {
         </div>
         <div className="footer__icons">
           <img src={githubIcon} className="footer__github" />
-          <img className="footer__facebook" />
+          <img src={facebookIcon} className="footer__facebook" />
         </div>
       </div>
     </footer>

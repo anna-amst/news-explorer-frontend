@@ -9,7 +9,6 @@
   justify-content: center;
   align-items: stretch;
   gap: 42px;
-  padding-right: 30px;
   position: relative;
   height: 100%;
 }
@@ -84,13 +83,34 @@
 }
 
 .navigation__logout-icon {
-  background: transparent url("../../assets/header/icon/logout.svg") no-repeat
-    center;
   height: 24px;
   width: 24px;
   border: none;
-  outline: none;
-  text-decoration: none;
   padding: 0;
   margin: 0;
+}
+
+.navigation__mobile{
+  display: none;
+}
+
+@media screen and (max-width: 320px) {
+  .navigation__buttons{
+    display: none;
+  }
+  .navigation__mobile{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 4px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .navigation__mobile-span{
+    width: 16px;
+height: 2px;
+color: white;
+  }
+  
 }

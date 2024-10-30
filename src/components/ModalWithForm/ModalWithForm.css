@@ -21,7 +21,7 @@
   background-size: contain;
   bottom: calc(100% + 1px);
   left: calc(100% + 1px);
-  background: transparent url("../../assets/icons/black/back.svg") no-repeat
+  background: transparent url("../../assets/close-button.svg") no-repeat
     center;
   border: none;
   outline: none;

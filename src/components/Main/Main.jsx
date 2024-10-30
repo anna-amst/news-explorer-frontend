@@ -1,7 +1,7 @@
 import SearchForm from "../SearchForm/SearchForm";
 import "./Main.css";
 
-function Main() {
+function Main({onSearch}) {
   return (
     <div className="main">
       <h1 className="main__title">What's going on in the world</h1>
@@ -9,7 +9,7 @@ function Main() {
         Find the latest news on any topic and save them in your personal
         account.
       </p>
-      <SearchForm />
+      <SearchForm onSearch={onSearch} />
     </div>
   );
 }
