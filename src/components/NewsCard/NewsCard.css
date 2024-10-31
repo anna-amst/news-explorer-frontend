@@ -57,7 +57,7 @@
   color: rgba(26, 27, 34, 1);
 }
 
-.card__text {
+.card__description {
   max-height: 110px;
   font-family: "Roboto";
   font-size: 16px;

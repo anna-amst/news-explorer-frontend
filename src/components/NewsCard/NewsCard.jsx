@@ -1,18 +1,18 @@
 import "./NewsCard.css";
 
-function NewsCard() {
-    return(
-        <div className="card__container">
-            <button type="button" className="card__bookmark"></button>
-            <img className="card__image"/>
-            <div className="card__info">
-            <p className="card__date">November 4, 2020</p>
-            <h1 className="card__title">Everyone Needs a Special 'Sit Spot' in Nature</h1>
-            <p className="card__text">Ever since I read Richard Louv's influential book, "Last Child in the Woods," the idea of having a special "sit spot" has stuck with me. This advice, which Louv attributes to nature educator Jon Young, is for both adults and children to find</p>
-            <p className="card__source">TREEHUGGER</p>
-            </div>
-        </div>
-    )
+function NewsCard({ title, date, source, description, imageUrl }) {
+  return (
+    <div className="card__container">
+      <button type="button" className="card__bookmark"></button>
+      {imageUrl && <img className="card__image" src={imageUrl} alt={title} />}
+      <div className="card__info">
+        <p className="card__date">{date}</p>
+        <h1 className="card__title">{title}</h1>
+        <p className="card__description">{description}</p>
+        <p className="card__source">{source}</p>
+      </div>
+    </div>
+  );
 }
 
 export default NewsCard;

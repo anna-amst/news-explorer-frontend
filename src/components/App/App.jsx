@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { BrowserRouter } from "react-router-dom";
 import { Routes, Route, useNavigate } from "react-router-dom";
 
 import Header from "../Header/Header";
@@ -17,13 +16,37 @@ import MobileNavBar from "../MobileNavBar/MobileNavBar";
 function App() {
   const [activeModal, setActiveModal] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [isSearching, setIsSearching] = useState(false); // to track if the search started
-  const navigate = useNavigate();
+  const [articles, setArticles] = useState([]);
+  const [isLoading, setIsLoading]= useState(false);
+  const [error, setError] = useState("");
+  const [isSearchPerformed, setIsSearchPerformed] = useState(false);
+  
 
-  const handleSearch = () => {
-    setIsSearching(true);
-    navigate("/saved-news");
+  const onSearch = async (keyword) => {
+    console.log("onSearch called with:", keyword);
+    setIsLoading(true);
+    setError("");
+    setIsSearchPerformed(true);
+    
+    const apiKey = "a6189f41d4654ea6bbdc657c8085baae";
+    const today = new Date().toISOString().split("T")[0];
+    const lastWeek = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString().split("T")[0];
+    const url = `https://newsapi.org/v2/everything?q=${keyword}&from=${lastWeek}&to=${today}&pageSize=100&apiKey=${apiKey}`;
+  
+    try {
+      const response = await fetch(url); // await can be used here because onSearch is an async function
+      if (!response.ok) throw new Error("Failed to fetch news articles.");
+      const data = await response.json();
+      console.log("Fetched articles:", data.articles);
+      setArticles(data.articles);
+    } catch (error) {
+      setError("An error occurred while fetching news articles.");
+      console.error("Fetch error:", error);
+    } finally {
+      setIsLoading(false);
+    }
   };
+
 
   const handleLoginClick = () => {
     setActiveModal("login");
@@ -61,8 +84,11 @@ function App() {
                       handleMobileMenuClick={handleMobileMenuClick}
                       isLoggedIn={isLoggedIn}
                     />
-                    <Main onSearch={handleSearch} />
+                    <Main onSearch={onSearch} />
                   </div>
+                  {isSearchPerformed && (
+                    <NewsCardList articles={articles} isLoading={isLoading} error={error} />
+                  )}
                   <About />
                 </>
               }
@@ -73,7 +99,7 @@ function App() {
                 <>
                   <SavedNewsHeader />
                   <SavedNews />
-                  <NewsCardList />
+                  <NewsCardList articles={articles} />
                 </>
               }
             />
