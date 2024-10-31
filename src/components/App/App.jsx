@@ -12,6 +12,7 @@ import SavedNewsHeader from "../SavedNewsHeader/SavedNewsHeader";
 import SavedNews from "../SavedNews/SavedNews";
 import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
+import MobileNavBar from "../MobileNavBar/MobileNavBar";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
@@ -26,6 +27,11 @@ function App() {
 
   const handleLoginClick = () => {
     setActiveModal("login");
+  };
+
+  const handleMobileMenuClick = () => {
+    console.log("Mobile menu clicked");
+    setActiveModal("mobile-menu");
   };
 
   const closeModal = () => {
@@ -52,6 +58,7 @@ function App() {
                   <div className="page__background">
                     <Header
                       handleLoginClick={handleLoginClick}
+                      handleMobileMenuClick={handleMobileMenuClick}
                       isLoggedIn={isLoggedIn}
                     />
                     <Main onSearch={handleSearch} />
@@ -84,6 +91,14 @@ function App() {
 
       {activeModal === "register" && (
         <RegisterModal
+          isOpen={true}
+          closeModal={closeModal}
+          navigateToLogin={navigateToLogin}
+        />
+      )}
+
+      {activeModal === "mobile-menu" && (
+        <MobileNavBar
           isOpen={true}
           closeModal={closeModal}
           navigateToLogin={navigateToLogin}

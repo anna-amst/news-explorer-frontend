@@ -1,9 +1,8 @@
 import { useState } from "react";
 import "./Navigation.css";
 import logoutIcon from "../../assets/logout.svg";
-import mobileMenuIcon from "../../assets/menu.svg";
 
-function Navigation({ handleLoginClick, isLoggedIn }) {
+function Navigation({ handleLoginClick, isLoggedIn, handleMobileMenuClick }) {
   return (
     <div className="navigation">
       <div className="navigation__buttons">
@@ -24,7 +23,7 @@ function Navigation({ handleLoginClick, isLoggedIn }) {
           </button>
         )}
         </div>
-        <img src={mobileMenuIcon} className="navigation__mobile" />
+        <button type="button" className="navigation__mobile" onClick={handleMobileMenuClick}></button>
       </div>
   );
 }

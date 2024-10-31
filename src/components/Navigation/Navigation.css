@@ -94,9 +94,11 @@
   display: none;
 }
 
+
 @media screen and (min-width: 320px) and (max-width: 613px) {
   .navigation{
     padding-right: 16px;
+    align-self: center;
   }
   
   .navigation__buttons{
@@ -105,6 +107,10 @@
   .navigation__mobile{
     display: block;
     width: 24px;
+    height: 24px;
+    background: transparent url("../../assets/menu.svg") no-repeat center;
+    border: none;
+    padding: 0;
   }
   
 }
