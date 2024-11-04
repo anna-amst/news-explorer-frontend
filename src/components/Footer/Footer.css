@@ -57,7 +57,6 @@
 }
 
 .footer__github {
-  
   height: 20px;
   width: 20px;
   border: none;
@@ -66,4 +65,27 @@
 .footer__facebook {
   height: 20px;
   width: 20px;
+}
+
+@media screen and (min-width: 613px) and (max-width: 1000px){
+  .footer{
+    padding: 32px 20px 26px;
+    
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 613px) {
+  .footer {
+    flex-direction: column-reverse;
+    gap: 38px;
+  }
+
+  .footer__menu {
+    justify-content: space-between;
+  }
+
+  .footer__navigation {
+    flex-direction: column;
+    align-items: start;
+  }
 }
