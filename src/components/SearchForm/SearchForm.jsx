@@ -9,7 +9,8 @@ function SearchForm({onSearch}) {
     setKeyword(event.target.value);
   };
 
-  const handleSearchClick =() => {
+  const handleSearchClick =(e) => {
+    e.preventDefault();
     if (!keyword) {
       setError("Please enter a keyword");
     } else {
@@ -19,10 +20,10 @@ function SearchForm({onSearch}) {
   }
 
   return (
-    <div className="searchform">
+    <form className="searchform" onSubmit={handleSearchClick}>
       <input className="searchform__input" type="text" placeholder="Enter topic" value={keyword} onChange={handleInputChange}></input>
-      <button className="searchform__button" onClick={handleSearchClick}>Search</button>
-    </div>
+      <button type="submit" className="searchform__button">Search</button>
+    </form>
   );
 
 }

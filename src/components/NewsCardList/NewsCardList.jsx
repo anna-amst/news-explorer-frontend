@@ -1,12 +1,13 @@
 import "./NewsCardList.css";
 import NewsCard from "../NewsCard/NewsCard";
+import Preloader from "../Preloader/Preloader";
 
 function NewsCardList({ articles, isLoading, error }) {
   return (
     <div className="newscards__section">
       <h1 className="newscards__title">Search results</h1>
-      {isLoading && <p>Loading..</p>}
-      {error && <p>{error}</p>}
+      {isLoading && <Preloader />}
+      {error && <p className="newscards__error">{error}</p>}
       <div className="newscards__list">
         {articles.map((article, index) => (
           <NewsCard

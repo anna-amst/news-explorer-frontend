@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 
+import { fetchNewsArticles } from "../../utils/news-api";
+
 import Header from "../Header/Header";
 import About from "../About/About";
 import Footer from "../Footer/Footer";
@@ -22,30 +24,29 @@ function App() {
   const [isSearchPerformed, setIsSearchPerformed] = useState(false);
   
 
-  const onSearch = async (keyword) => {
+  const onSearch = (keyword) => {
     console.log("onSearch called with:", keyword);
     setIsLoading(true);
     setError("");
     setIsSearchPerformed(true);
-    
-    const apiKey = "a6189f41d4654ea6bbdc657c8085baae";
-    const today = new Date().toISOString().split("T")[0];
-    const lastWeek = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString().split("T")[0];
-    const url = `https://newsapi.org/v2/everything?q=${keyword}&from=${lastWeek}&to=${today}&pageSize=100&apiKey=${apiKey}`;
-  
-    try {
-      const response = await fetch(url); // await can be used here because onSearch is an async function
-      if (!response.ok) throw new Error("Failed to fetch news articles.");
-      const data = await response.json();
-      console.log("Fetched articles:", data.articles);
-      setArticles(data.articles);
-    } catch (error) {
-      setError("An error occurred while fetching news articles.");
-      console.error("Fetch error:", error);
-    } finally {
+
+    fetchNewsArticles(keyword)
+    .then((articles) => {
+      setArticles(articles);
+    })
+    .catch((error) => {
+      setError(error.message);
+    })
+    .finally(() => {
       setIsLoading(false);
-    }
-  };
+    })
+  }
+
+    
+  const handleLoginSubmit =() => {
+    setIsLoggedIn(true);
+    closeModal();
+  }
 
 
   const handleLoginClick = () => {
@@ -112,6 +113,7 @@ function App() {
           isOpen={true}
           closeModal={closeModal}
           navigateToSignUp={navigateToSignUp}
+          handleLoginSubmit={handleLoginSubmit}
         />
       )}
 
@@ -128,6 +130,7 @@ function App() {
           isOpen={true}
           closeModal={closeModal}
           navigateToLogin={navigateToLogin}
+          handleLoginClick={handleLoginClick}
         />
       )}
     </>

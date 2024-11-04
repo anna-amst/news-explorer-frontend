@@ -104,12 +104,11 @@
   line-height: 24px;
 }
 
-/* .modal__sign-in-button:hover {
-}
+
 
 .modal__sign-in-button:disabled {
   background-color: rgba(14, 26, 57, 0.2);
-} */
+} 
 
 .modal__alt-button {
   height: 20px;

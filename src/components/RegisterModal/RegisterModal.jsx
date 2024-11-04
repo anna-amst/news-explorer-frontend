@@ -1,7 +1,7 @@
 import "./RegisterModal.css";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
-function RegisterModal({isOpen, closeModal, navigateToLogin}) {
+function RegisterModal({isOpen, closeModal, navigateToLogin }) {
     return(
         <ModalWithForm title="Sign up"
         isOpen={isOpen}
