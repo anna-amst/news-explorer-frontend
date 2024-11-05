@@ -16,7 +16,7 @@ function LoginModal({isOpen, closeModal, navigateToSignUp, handleLoginSubmit}) {
               required
               placeholder="example@test.com"
               name="email"
-            ></input>
+            ></input> 
           </label>
           <label htmlFor="password" className="modal__label">Password
             <input

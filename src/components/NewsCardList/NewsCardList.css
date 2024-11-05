@@ -47,7 +47,7 @@
   line-height: 24px;
 }
 
-@media screen and (max-width: 768px){
+@media screen and (min-width: 613px) and (max-width: 850px){
   .newscards__section{
     min-height: 200px;
     padding: 40px;
@@ -70,4 +70,17 @@
     border-radius: 56px;
   }
 
+}
+
+@media screen and (min-width: 320px) and (max-width: 613px){
+  
+  
+  .newscards__list{
+    gap: 10px;
+  }
+
+  .newscards__title{
+    font-size: 30px;
+    align-self: center;
+  }
 }

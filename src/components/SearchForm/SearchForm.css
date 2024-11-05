@@ -39,12 +39,24 @@
   text-align: center;
 }
 
-@media screen and (min-width: 320px) and (max-width: 613px){
-  .searchform{
-    display: flex;
-    width: 288px;
+@media screen and (min-width: 320px) and (max-width: 613px) {
+  .searchform {
     flex-direction: column;
+    width: 288px;
+    padding-bottom: 32px;
+  }
+
+  .searchform__input {
+    width: 100%;
+    height: 56px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+  }
+
+  .searchform__button {
+    position: static;
+    width: 100%;
+    height: 56px;
+    box-sizing: border-box;
   }
 }
-
-

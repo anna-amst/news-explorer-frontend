@@ -104,10 +104,8 @@
   line-height: 24px;
 }
 
-
-
-.modal__sign-in-button:disabled {
-  background-color: rgba(14, 26, 57, 0.2);
+.modal__sign-in-button.active {
+  background-color: rgba(47, 113, 229, 1);
 } 
 
 .modal__alt-button {
