@@ -1,15 +1,23 @@
-import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import "./Navigation.css";
 import logoutIcon from "../../assets/logout.svg";
 
 function Navigation({ handleLoginClick, isLoggedIn, handleMobileMenuClick }) {
+ const location = useLocation();
+
   return (
-    <div className="navigation">
+    <div className={`navigation ${location.pathname === "/saved-news" ? "navigation--saved" : ""}`}>
       <div className="navigation__buttons">
-        <button className="navigation__home">Home</button>
+        <button
+          className={`navigation__home ${
+            location.pathname === "/" ? "navigation__home__active" : ""
+          }`}>Home</button>
         {isLoggedIn ? (
           <>
-            <button className="navigation__saved-articles">
+            <button
+              className={`navigation__saved-articles ${
+                location.pathname === "/saved-news" ? "navigation__saved-articles__active" : ""
+              }`}>
               Saved articles
             </button>
             <button className="navigation__logout">

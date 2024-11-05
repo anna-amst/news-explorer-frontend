@@ -15,10 +15,11 @@ import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import MobileNavBar from "../MobileNavBar/MobileNavBar";
 import SuccessModal from "../SuccessModal/SuccessModal";
+import SavedNewsCardList from "../SavedNewsCardList/SavedNewsCardList";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading]= useState(false);
   const [error, setError] = useState("");
@@ -105,7 +106,7 @@ function App() {
                 <>
                   <SavedNewsHeader />
                   <SavedNews />
-                  <NewsCardList articles={articles} />
+                  <SavedNewsCardList articles={articles} />
                 </>
               }
             />
