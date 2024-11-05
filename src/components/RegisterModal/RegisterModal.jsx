@@ -1,11 +1,12 @@
 import "./RegisterModal.css";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
-function RegisterModal({isOpen, closeModal, navigateToLogin }) {
+function RegisterModal({isOpen, closeModal, navigateToLogin, handleSignUp }) {
     return(
         <ModalWithForm title="Sign up"
         isOpen={isOpen}
-        closeModal={closeModal} >
+        closeModal={closeModal}
+        onSubmit={handleSignUp} >
             <label htmlFor="email" className="modal__label">
             Email
             <input
@@ -41,7 +42,7 @@ function RegisterModal({isOpen, closeModal, navigateToLogin }) {
           <button type="submit" className="modal__sign-in-button">Sign up</button>
           <div className="modal__alt-button">
             <p>or</p>
-            <button type="button" to="register" className="modal__sign-up-button" onClick={navigateToLogin}>Sign in</button>
+            <button type="button" to="login" className="modal__sign-up-button" onClick={navigateToLogin}>Sign in</button>
           </div>
         
         </ModalWithForm>

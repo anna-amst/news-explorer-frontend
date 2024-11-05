@@ -1,15 +1,22 @@
+import { useState } from "react";
 import "./NewsCardList.css";
 import NewsCard from "../NewsCard/NewsCard";
 import Preloader from "../Preloader/Preloader";
 
 function NewsCardList({ articles, isLoading, error }) {
+  const [visibleCards, setVisibleCards] = useState(3);
+
+  const showMoreCards = () => {
+    setVisibleCards((prevCount) => prevCount + 3);
+  }
+
   return (
     <div className="newscards__section">
       <h1 className="newscards__title">Search results</h1>
       {isLoading && <Preloader />}
       {error && <p className="newscards__error">{error}</p>}
       <div className="newscards__list">
-        {articles.map((article, index) => (
+        {articles.slice(0, visibleCards).map((article, index) => (
           <NewsCard
             key={index}
             title={article.title}
@@ -20,8 +27,8 @@ function NewsCardList({ articles, isLoading, error }) {
           />
         ))}
       </div>
-      {articles.length > 0 && (
-        <button type="button" className="newscards__button">
+      {visibleCards < articles.length && (
+        <button type="button" className="newscards__button" onClick={showMoreCards}>
           Show more
         </button>
       )}

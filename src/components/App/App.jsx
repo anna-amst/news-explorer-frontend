@@ -14,6 +14,7 @@ import SavedNews from "../SavedNews/SavedNews";
 import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import MobileNavBar from "../MobileNavBar/MobileNavBar";
+import SuccessModal from "../SuccessModal/SuccessModal";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
@@ -42,7 +43,11 @@ function App() {
     })
   }
 
-    
+  
+  const handleSignUp =() => {
+    setActiveModal("success-modal");
+  }
+
   const handleLoginSubmit =() => {
     setIsLoggedIn(true);
     closeModal();
@@ -122,6 +127,7 @@ function App() {
           isOpen={true}
           closeModal={closeModal}
           navigateToLogin={navigateToLogin}
+          handleSignUp={handleSignUp}
         />
       )}
 
@@ -133,6 +139,11 @@ function App() {
           handleLoginClick={handleLoginClick}
         />
       )}
+
+      {activeModal === "success-modal" && (
+        <SuccessModal isOpen={true} closeModal={closeModal} navigateToLogin={navigateToLogin}/>
+      )
+      }
     </>
   );
 }
