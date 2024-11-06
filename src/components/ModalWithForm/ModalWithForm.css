@@ -104,9 +104,10 @@
   line-height: 24px;
 }
 
-.modal__sign-in-button.active {
+.modal__sign-in-button:hover {
   background-color: rgba(47, 113, 229, 1);
-} 
+  color: white;
+}
 
 .modal__alt-button {
   height: 20px;
@@ -129,5 +130,5 @@
   background: none;
   padding: 0;
   color: rgba(47, 113, 229, 1);
-
+  cursor: pointer;
 }

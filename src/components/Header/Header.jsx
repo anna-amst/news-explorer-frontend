@@ -1,11 +1,14 @@
 import Navigation from "../Navigation/Navigation";
 import "./Header.css";
+import { useLocation } from "react-router-dom";
 
-function Header({handleLoginClick, isLoggedIn, handleMobileMenuClick}) {
+function Header({handleLoginClick, isLoggedIn, handleMobileMenuClick, handleHomeClick, handleSavedArticlesClick}) {
+
+  const location = useLocation();
   return (
     <header className="header">
-      <h1 className="header__title">News Explorer</h1>
-      <Navigation handleLoginClick={handleLoginClick} isLoggedIn={isLoggedIn} handleMobileMenuClick={handleMobileMenuClick} />
+      <button className={`header__title ${location.pathname === "/saved-news" ? "header__title__saved-news" : ""}`} onClick={handleHomeClick}>News Explorer</button>
+      <Navigation handleLoginClick={handleLoginClick} isLoggedIn={isLoggedIn} handleMobileMenuClick={handleMobileMenuClick} handleHomeClick={handleHomeClick} handleSavedArticlesClick={handleSavedArticlesClick} />
     </header>
   );
 }

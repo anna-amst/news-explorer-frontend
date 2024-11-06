@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 
 import { fetchNewsArticles } from "../../utils/news-api";
-
+import { useNavigation } from "react-router-dom";
 import Header from "../Header/Header";
 import About from "../About/About";
 import Footer from "../Footer/Footer";
@@ -19,12 +19,13 @@ import SavedNewsCardList from "../SavedNewsCardList/SavedNewsCardList";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [articles, setArticles] = useState([]);
-  const [isLoading, setIsLoading]= useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
   const [isSearchPerformed, setIsSearchPerformed] = useState(false);
-  
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const onSearch = (keyword) => {
     console.log("onSearch called with:", keyword);
@@ -33,27 +34,33 @@ function App() {
     setIsSearchPerformed(true);
 
     fetchNewsArticles(keyword)
-    .then((articles) => {
-      setArticles(articles);
-    })
-    .catch((error) => {
-      setError(error.message);
-    })
-    .finally(() => {
-      setIsLoading(false);
-    })
-  }
+      .then((articles) => {
+        setArticles(articles);
+      })
+      .catch((error) => {
+        setError(error.message);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  };
 
-  
-  const handleSignUp =() => {
+  const handleHomeClick = () => {
+    navigate("/");
+  };
+
+  const handleSavedArticlesClick = () => {
+    navigate("/saved-news");
+  };
+
+  const handleSignUp = () => {
     setActiveModal("success-modal");
-  }
+  };
 
-  const handleLoginSubmit =() => {
+  const handleLoginSubmit = () => {
     setIsLoggedIn(true);
     closeModal();
-  }
-
+  };
 
   const handleLoginClick = () => {
     setActiveModal("login");
@@ -75,26 +82,35 @@ function App() {
   const navigateToSignUp = () => {
     setActiveModal("register");
   };
+ 
 
   return (
     <>
       <div className="page">
         <div className="page__content">
+        <div className={`page__background ${location.pathname === "/saved-news" ? "page__no-bg" : ""}`}>
+          <Header
+            handleLoginClick={handleLoginClick}
+            handleMobileMenuClick={handleMobileMenuClick}
+            isLoggedIn={isLoggedIn}
+            handleHomeClick={handleHomeClick}
+            handleSavedArticlesClick={handleSavedArticlesClick}
+          />
+          </div>
           <Routes>
             <Route
               path="*"
               element={
                 <>
                   <div className="page__background">
-                    <Header
-                      handleLoginClick={handleLoginClick}
-                      handleMobileMenuClick={handleMobileMenuClick}
-                      isLoggedIn={isLoggedIn}
-                    />
                     <Main onSearch={onSearch} />
                   </div>
                   {isSearchPerformed && (
-                    <NewsCardList articles={articles} isLoading={isLoading} error={error} />
+                    <NewsCardList
+                      articles={articles}
+                      isLoading={isLoading}
+                      error={error}
+                    />
                   )}
                   <About />
                 </>
@@ -104,9 +120,7 @@ function App() {
               path="saved-news"
               element={
                 <>
-                  <SavedNewsHeader />
                   <SavedNews />
-                  <SavedNewsCardList articles={articles} />
                 </>
               }
             />
@@ -142,9 +156,12 @@ function App() {
       )}
 
       {activeModal === "success-modal" && (
-        <SuccessModal isOpen={true} closeModal={closeModal} navigateToLogin={navigateToLogin}/>
-      )
-      }
+        <SuccessModal
+          isOpen={true}
+          closeModal={closeModal}
+          navigateToLogin={navigateToLogin}
+        />
+      )}
     </>
   );
 }

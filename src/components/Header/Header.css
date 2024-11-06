@@ -6,12 +6,22 @@
 }
 
 .header__title {
+  margin: 0;
+  outline: none;
+  border: none;
+  background: none;
   font-family: "Roboto Slab";
   font-size: 20px;
   font-weight: 700;
   line-height: 24px;
   margin: 0;
   padding: 30px 104px 26px;
+  color: white;
+  cursor: pointer;
+}
+
+.header__title__saved-news {
+  color:black;
 }
 
 @media screen  and (min-width:613px) and (max-width:688px){

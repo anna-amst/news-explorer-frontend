@@ -10,4 +10,10 @@
 .page__background {
   background-image: url("../../assets/background.jpeg");
   background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.page__no-bg {
+  background-image: none;
 }
