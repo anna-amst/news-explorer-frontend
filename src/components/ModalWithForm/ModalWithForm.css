@@ -132,3 +132,21 @@
   color: rgba(47, 113, 229, 1);
   cursor: pointer;
 }
+
+@media screen and (min-width: 320px) and (max-width: 500px) {
+  .modal__content {
+    width: 320px;
+    height: 560px;
+    border: 1px 0px 0px 0px;
+    padding: 16px;
+  }
+  .modal__input {
+    margin: 0 0 30px;
+  }
+
+  .modal__sign-in-button{
+    width: 288px;
+height: 64px;
+
+  }
+}

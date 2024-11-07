@@ -2,9 +2,19 @@ export function fetchNewsArticles(keyword) {
     const apiKey = "a6189f41d4654ea6bbdc657c8085baae";
     const today = new Date().toISOString().split("T")[0];
     const lastWeek = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString().split("T")[0];
-    const url = `https://newsapi.org/v2/everything?q=${keyword}&from=${lastWeek}&to=${today}&pageSize=100&apiKey=${apiKey}`;
+    const BASE_URL = `https://newsapi.org/v2/everything?q=${keyword}&from=${lastWeek}&to=${today}&pageSize=100&apiKey=${apiKey}`;
   
-    return fetch(url)
+
+    //check api responses 
+    const checkResponse = (response) => {
+      if(response.ok) {
+        return response.json();
+      }
+      return Promise.reject(`Error ${response.status}`)
+    };
+
+
+    return fetch(BASE_URL)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch news articles.");
@@ -17,3 +27,4 @@ export function fetchNewsArticles(keyword) {
         throw new Error("An error occurred while fetching news articles.");
       });
   }
+

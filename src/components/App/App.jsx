@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 
 import { fetchNewsArticles } from "../../utils/news-api";
@@ -23,7 +23,9 @@ function App() {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [currentKeyword, setCurrentKeyword] = useState("");
   const [isSearchPerformed, setIsSearchPerformed] = useState(false);
+  // const [savedArticles, setSavedArticles] = useSate([]);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -32,10 +34,15 @@ function App() {
     setIsLoading(true);
     setError("");
     setIsSearchPerformed(true);
+    setCurrentKeyword(keyword);
 
     fetchNewsArticles(keyword)
       .then((articles) => {
-        setArticles(articles);
+        const fetchedArticles = articles.map((article) => ({
+          ...article,
+          keyword: keyword,
+        }));
+        setArticles(fetchedArticles);
       })
       .catch((error) => {
         setError(error.message);
@@ -75,6 +82,26 @@ function App() {
     setActiveModal("");
   };
 
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === "Escape") {
+        closeModal();
+      }
+    };
+    document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
+  }, []);
+
+  useEffect(() => {
+    const handleOverlay = (e) => {
+      if (e.target.classList.contains("modal")) {
+        closeModal();
+      }
+    };
+    document.addEventListener("click", handleOverlay);
+    return () => document.removeEventListener("click", handleOverlay);
+  }, []);
+
   const navigateToLogin = () => {
     setActiveModal("login");
   };
@@ -82,20 +109,33 @@ function App() {
   const navigateToSignUp = () => {
     setActiveModal("register");
   };
- 
+
+  // const saveArticle = (article) => {
+  //   setSavedArticles([...savedArticles, article]);
+  // };
+
+  // const deleteArticle = (articleToDelete) => {
+  //   setSavedArticles(
+  //     savedArticles.filter((article) => article.id !== articleToDelete.id)
+  //   );
+  // };
 
   return (
     <>
       <div className="page">
         <div className="page__content">
-        <div className={`page__background ${location.pathname === "/saved-news" ? "page__no-bg" : ""}`}>
-          <Header
-            handleLoginClick={handleLoginClick}
-            handleMobileMenuClick={handleMobileMenuClick}
-            isLoggedIn={isLoggedIn}
-            handleHomeClick={handleHomeClick}
-            handleSavedArticlesClick={handleSavedArticlesClick}
-          />
+          <div
+            className={`page__background ${
+              location.pathname === "/saved-news" ? "page__no-bg" : ""
+            }`}
+          >
+            <Header
+              handleLoginClick={handleLoginClick}
+              handleMobileMenuClick={handleMobileMenuClick}
+              isLoggedIn={isLoggedIn}
+              handleHomeClick={handleHomeClick}
+              handleSavedArticlesClick={handleSavedArticlesClick}
+            />
           </div>
           <Routes>
             <Route
@@ -107,6 +147,7 @@ function App() {
                   </div>
                   {isSearchPerformed && (
                     <NewsCardList
+                      isLoggedIn={isLoggedIn}
                       articles={articles}
                       isLoading={isLoading}
                       error={error}
