@@ -10,7 +10,6 @@ function NewsCardList({ articles, isLoading, error, isLoggedIn }) {
     setVisibleCards((prevCount) => prevCount + 3);
   }
 
-  console.log(articles);
 
   return (
     <div className="newscards__section">

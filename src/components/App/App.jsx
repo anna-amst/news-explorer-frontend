@@ -25,7 +25,6 @@ function App() {
   const [error, setError] = useState("");
   const [currentKeyword, setCurrentKeyword] = useState("");
   const [isSearchPerformed, setIsSearchPerformed] = useState(false);
-  // const [savedArticles, setSavedArticles] = useSate([]);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -69,6 +68,11 @@ function App() {
     closeModal();
   };
 
+  const handleLogOut = () => {
+    navigate("/");
+    setIsLoggedIn(false);
+  }
+
   const handleLoginClick = () => {
     setActiveModal("login");
   };
@@ -110,15 +114,6 @@ function App() {
     setActiveModal("register");
   };
 
-  // const saveArticle = (article) => {
-  //   setSavedArticles([...savedArticles, article]);
-  // };
-
-  // const deleteArticle = (articleToDelete) => {
-  //   setSavedArticles(
-  //     savedArticles.filter((article) => article.id !== articleToDelete.id)
-  //   );
-  // };
 
   return (
     <>
@@ -135,6 +130,7 @@ function App() {
               isLoggedIn={isLoggedIn}
               handleHomeClick={handleHomeClick}
               handleSavedArticlesClick={handleSavedArticlesClick}
+              handleLogOut={handleLogOut}
             />
           </div>
           <Routes>

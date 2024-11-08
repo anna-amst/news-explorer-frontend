@@ -5,7 +5,7 @@
   padding: 32px 104px 26px;
 }
 
-.footer__text {
+.footer__copyright {
   font-family: "Roboto";
   font-size: 16px;
   font-weight: 400;
@@ -35,20 +35,14 @@
   margin: 0;
 }
 
-.footer__navigation-home {
+.footer__navigation-item{
   margin: 0;
   outline: none;
   border: none;
   background: none;
   padding: 0;
 }
-.footer__navigation-tripleten {
-  margin: 0;
-  outline: none;
-  border: none;
-  background: none;
-  padding: 0;
-}
+
 
 .footer__icons {
   display: flex;
@@ -56,16 +50,13 @@
   gap: 26px;
 }
 
-.footer__github {
+.footer__icon {
   height: 20px;
   width: 20px;
   border: none;
 }
 
-.footer__facebook {
-  height: 20px;
-  width: 20px;
-}
+
 
 @media screen and (min-width: 613px) and (max-width: 1000px){
   .footer{

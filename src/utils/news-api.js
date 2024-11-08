@@ -6,12 +6,12 @@ export function fetchNewsArticles(keyword) {
   
 
     //check api responses 
-    const checkResponse = (response) => {
-      if(response.ok) {
-        return response.json();
-      }
-      return Promise.reject(`Error ${response.status}`)
-    };
+    // const checkResponse = (response) => {
+    //   if(response.ok) {
+    //     return response.json();
+    //   }
+    //   return Promise.reject(`Error ${response.status}`)
+    // };
 
 
     return fetch(BASE_URL)

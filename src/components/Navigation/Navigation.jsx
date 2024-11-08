@@ -3,7 +3,7 @@ import "./Navigation.css";
 import logoutIcon from "../../assets/logout.svg";
 import altIcon from "../../assets/alt-logout.svg";
 
-function Navigation({ handleLoginClick, isLoggedIn, handleMobileMenuClick, handleHomeClick, handleSavedArticlesClick }) {
+function Navigation({ handleLoginClick, isLoggedIn, handleMobileMenuClick, handleHomeClick, handleSavedArticlesClick, handleLogOut }) {
  const location = useLocation();
 
  console.log(isLoggedIn);
@@ -22,7 +22,7 @@ function Navigation({ handleLoginClick, isLoggedIn, handleMobileMenuClick, handl
               }`} onClick={handleSavedArticlesClick}>
               Saved articles
             </button>
-            <button className="navigation__logout">
+            <button className="navigation__logout" onClick={handleLogOut}>
               Elise
               <img className="navigation__logout-icon" src={location.pathname === "/" ? logoutIcon : altIcon} />
             </button>
