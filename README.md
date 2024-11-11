@@ -25,3 +25,6 @@
 - **HTML5 & CSS3**: For structure and styling.
 - **News API**: For fetching news articles.
 
+Check out the live version of the project [here](https://anna-amst.github.io/news-explorer-frontend/).
+
+
