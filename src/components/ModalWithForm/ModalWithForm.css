@@ -144,9 +144,13 @@
     margin: 0 0 30px;
   }
 
-  .modal__sign-in-button{
+  .modal__sign-in-button {
     width: 288px;
-height: 64px;
+    height: 64px;
+  }
 
+  .modal__close {
+    right: 1px;
+    left: auto;
   }
 }
