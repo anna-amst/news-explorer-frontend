@@ -132,5 +132,9 @@
     border: none;
     padding: 0;
   }
+
+  .navigation--saved .navigation__mobile {
+    background: transparent url("../../assets/menu-black.svg") no-repeat center;
+  }
   
 }

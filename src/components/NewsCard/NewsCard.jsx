@@ -1,6 +1,17 @@
+import { useLocation } from "react-router-dom";
 import "./NewsCard.css";
 
-function NewsCard({ title, date, source, description, imageUrl, isLoggedIn, keyword}) {
+function NewsCard({
+  title,
+  date,
+  source,
+  description,
+  imageUrl,
+  isLoggedIn,
+  keyword,
+}) {
+  const location = useLocation();
+  const savedNewsRoute = location.pathname === "/saved-news";
 
   // const handleSaveClick = () => {
   //   if(isLoggedIn) {
@@ -14,15 +25,21 @@ function NewsCard({ title, date, source, description, imageUrl, isLoggedIn, keyw
   //   }
   // };
 
-
   return (
     <div className="card__container">
       {isLoggedIn ? (
-        <>
-          <div className="card__keyword">{keyword}</div>
-          <button className="card__delete-btn"></button>
-          <div className="card__delete-confirm">Remove from saved</div>
-        </>
+        savedNewsRoute ? (
+          <>
+            <div className="card__keyword">{keyword}</div>
+            <button className="card__delete-btn"></button>
+            <div className="card__delete-confirm">Remove from saved</div>
+          </>
+        ) : (
+          <>
+            <button type="button" className="card__bookmark"></button>
+            <div className="card__save-confirm">Sign in to save articles</div>
+          </>
+        )
       ) : (
         <>
           <button type="button" className="card__bookmark"></button>

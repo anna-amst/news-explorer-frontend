@@ -1,6 +1,6 @@
 .saved-news__header {
   background-color: rgba(255, 255, 255, 1);
-  padding: 40px 104px 56px;
+  padding: 40px 104px 0;
 }
 
 .saved-news__header__title {
@@ -30,6 +30,8 @@
   flex-direction: row;
   gap: 5px;
   margin-bottom: 56px;
+  flex-wrap: wrap;
+  align-items: baseline;
 }
 
 .saved-news__header__keywords-title {
@@ -69,5 +71,13 @@
   .saved-news__header__keywords-container {
     margin-top: 50px;
     margin-bottom: 0;
+  }
+
+  .saved-news__header__keywords{
+    margin: 0;
+  }
+
+  .saved-news__header__keywords-title{
+    margin: 0;
   }
 }

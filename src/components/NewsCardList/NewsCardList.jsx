@@ -8,17 +8,19 @@ function NewsCardList({ articles, isLoading, error, isLoggedIn }) {
 
   const showMoreCards = () => {
     setVisibleCards((prevCount) => prevCount + 3);
-  }
-
+  };
 
   return (
     <div className="newscards__section">
-      <h1 className="newscards__title">Search results</h1>
       {isLoading && <Preloader />}
+      {!isLoading && articles.length > 0 && (
+        <h1 className="newscards__title">Search results</h1>
+      )}
       {error && <p className="newscards__error">{error}</p>}
       <div className="newscards__list">
         {articles.slice(0, visibleCards).map((article, index) => (
-          <NewsCard isLoggedIn={isLoggedIn}
+          <NewsCard
+            isLoggedIn={isLoggedIn}
             key={index}
             keyword={article.keyword}
             title={article.title}
@@ -30,7 +32,11 @@ function NewsCardList({ articles, isLoading, error, isLoggedIn }) {
         ))}
       </div>
       {visibleCards < articles.length && (
-        <button type="button" className="newscards__button" onClick={showMoreCards}>
+        <button
+          type="button"
+          className="newscards__button"
+          onClick={showMoreCards}
+        >
           Show more
         </button>
       )}
