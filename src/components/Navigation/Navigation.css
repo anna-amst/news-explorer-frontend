@@ -29,6 +29,7 @@
   gap: 42px;
   position: relative;
   height: 100%;
+  margin: 0;
 }
 
 .navigation__home {

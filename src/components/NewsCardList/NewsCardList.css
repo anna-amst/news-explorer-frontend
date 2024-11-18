@@ -1,11 +1,11 @@
-.newscards__section{
+.newscards{
     display: flex;
     flex-direction: column;
     background-color: rgba(245, 246, 247, 1);
     padding: 80px 104px;
 }
 
-.newscards__list {
+.newscards__container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

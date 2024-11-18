@@ -8,8 +8,8 @@ function Navigation({ handleLoginClick, isLoggedIn, handleMobileMenuClick, handl
 
  console.log(isLoggedIn);
   return (
-    <div className={`navigation ${location.pathname === "/saved-news" ? "navigation--saved" : ""}`}>
-      <div className="navigation__buttons">
+    <nav className={`navigation ${location.pathname === "/saved-news" ? "navigation--saved" : ""}`}>
+      <ul className="navigation__buttons">
         <button
           className={`navigation__home ${
             location.pathname === "/" ? "navigation__home__active" : ""
@@ -32,9 +32,9 @@ function Navigation({ handleLoginClick, isLoggedIn, handleMobileMenuClick, handl
             Sign In
           </button>
         )}
-        </div>
+        </ul>
         <button type="button" className="navigation__mobile" onClick={handleMobileMenuClick}></button>
-      </div>
+      </nav>
   );
 }
 
