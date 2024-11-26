@@ -1,6 +1,6 @@
 import "./SavedNewsCardList.css";
 
-function SavedNewsCardList() {
+function SavedNewsCardList({}) {
   return (
     <div className="saved-news">
       <div className="saved-news__container">

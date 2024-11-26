@@ -60,6 +60,10 @@
   padding: 13px 26px;
 }
 
+.saved-news__card-delete-btn:hover + .saved-news__card-delete-confirm {
+  display: block;
+}
+
 .saved-news__card-info {
   margin: 0 24px 24px;
 }
@@ -221,4 +225,3 @@
     margin: 0;
   }
 }
-
