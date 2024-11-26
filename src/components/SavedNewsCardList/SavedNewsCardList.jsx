@@ -9,7 +9,7 @@ function SavedNewsCardList() {
           <div className="saved-news__card-delete-confirm">
             Remove from saved
           </div>
-          <img className="saved-news__card-image" alt="Saved article"></img>
+          <img className="saved-news__card-image"></img>
           <div className="saved-news__card-info">
             <p className="saved-news__card-date">November 4, 2020</p>
             <h1 className="saved-news__card-title">
@@ -27,7 +27,7 @@ function SavedNewsCardList() {
           <div className="saved-news__card-delete-confirm">
             Remove from saved
           </div>
-          <img className="saved-news__card-image" alt="Saved article"></img>
+          <img className="saved-news__card-image"></img>
           <div className="saved-news__card-info">
             <p className="saved-news__card-date">November 4, 2020</p>
             <h1 className="saved-news__card-title">
@@ -45,7 +45,7 @@ function SavedNewsCardList() {
           <div className="saved-news__card-delete-confirm">
             Remove from saved
           </div>
-          <img className="saved-news__card-image" alt="Saved article"></img>
+          <img className="saved-news__card-image"></img>
           <div className="saved-news__card-info">
             <p className="saved-news__card-date">November 4, 2020</p>
             <h1 className="saved-news__card-title">

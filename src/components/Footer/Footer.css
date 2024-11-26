@@ -13,6 +13,7 @@
   text-align: left;
   color: rgba(182, 188, 191, 1);
   margin: 0;
+  align-self: center;
 }
 
 .footer__menu {
