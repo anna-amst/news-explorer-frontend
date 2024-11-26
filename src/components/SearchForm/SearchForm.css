@@ -37,6 +37,12 @@
   font-weight: 500;
   line-height: 24px;
   text-align: center;
+  cursor: pointer;
+}
+
+.searchform__button:hover{
+  background-color: rgba(52, 126, 255, 1);
+  ;
 }
 
 @media screen and (min-width: 320px) and (max-width: 613px) {

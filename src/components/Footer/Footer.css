@@ -32,9 +32,10 @@
   line-height: 24px;
   text-align: center;
   margin: 0;
+  list-style: none;
 }
 
-.footer__navigation-item{
+.footer__navigation-item {
   margin: 0;
   outline: none;
   border: none;
@@ -45,11 +46,11 @@
   cursor: pointer;
 }
 
-
 .footer__icons {
   display: flex;
   flex-direction: row;
   gap: 26px;
+  margin: 0;
 }
 
 .footer__icon {
@@ -58,13 +59,16 @@
   border: none;
   cursor: pointer;
 }
+.footer__navigation-link,
+.footer__icon-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
 
-
-
-@media screen and (min-width: 613px) and (max-width: 1000px){
-  .footer{
+@media screen and (min-width: 613px) and (max-width: 1000px) {
+  .footer {
     padding: 32px 20px 26px;
-  
   }
 }
 
@@ -82,5 +86,7 @@
   .footer__navigation {
     flex-direction: column;
     align-items: start;
+    padding: 0;
+    gap: 20px;
   }
 }

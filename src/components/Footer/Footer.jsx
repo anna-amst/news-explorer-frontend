@@ -8,24 +8,29 @@ function Footer() {
       <p className="footer__copyright">
         &copy;2024 Supersite, Powered by News API
       </p>
-      <div className="footer__menu">
-        <div className="footer__navigation">
+      <nav className="footer__menu">
+        <ul className="footer__navigation">
+        <li className="footer__navigation-item">
           <a
             href="/"
             target="_blank"
-            className="footer__navigation-item footer__navigation-item-home"
+            className="footer__navigation-link footer__navigation-link-home"
           >
             Home
           </a>
+          </li>
+          <li className="footer__navigation-item">
           <a
             href="https://www.tripleten.com"
             target="_blank"
-            className="footer__navigation-item footer__navigation-item-tripleten"
+            className="footer__navigation-link footer__navigation-link-tripleten"
           >
             TripleTen
           </a>
-        </div>
-        <div className="footer__icons">
+          </li>
+        </ul>
+        <ul className="footer__icons">
+        <li className="footer__icon-item">
           <a
             href="https://github.com/anna-amst"
             target="_blank"
@@ -36,6 +41,8 @@ function Footer() {
               className="footer__icon footer__icon-github"
             />{" "}
           </a>
+          </li>
+          <li className="footer__icon-item">
           <a
             href="https://www.facebook.com/login.php/"
             target="_blank"
@@ -46,8 +53,9 @@ function Footer() {
               className="footer__icon footer__icon-facebook"
             />
           </a>
-        </div>
-      </div>
+          </li>
+        </ul>
+      </nav>
     </footer>
   );
 }

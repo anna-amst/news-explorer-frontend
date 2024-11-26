@@ -5,17 +5,18 @@
     padding: 80px 104px;
 }
 
-.newscards__container {
+.newscards__list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   gap: 16px;
   margin: 64px auto;
+  padding: 0;
 }
 
 .newscards__title {
-  font-family: "Roboto Slab";
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
   font-size: 40px;
   font-weight: 400;
   line-height: 46px;
@@ -29,7 +30,7 @@
   padding: 0;
   width: 288px;
   height: 64px;
-  background-color: rgba(232, 232, 232, 1);
+  background-color: rgba(255, 255, 255, 1);
   border: none;
   border-radius: 80px;
   color: rgba(26, 27, 34, 1);
@@ -37,11 +38,17 @@
   font-size: 18px;
   font-weight: 500;
   line-height: 24px;
+  cursor: pointer;
+}
+
+.newscards__button:hover{
+  background-color: rgba(232, 232, 232, 1);
+
 }
 
 .newscards__error{
   color:black;
-  font-family: "Roboto";
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;

@@ -189,6 +189,7 @@ function App() {
           closeModal={closeModal}
           navigateToLogin={navigateToLogin}
           handleLoginClick={handleLoginClick}
+          handleHomeClick={handleHomeClick}
         />
       )}
 

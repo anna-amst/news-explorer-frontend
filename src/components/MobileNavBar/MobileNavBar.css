@@ -58,11 +58,12 @@
  margin: 0px;
  padding: 16px 16px 22px;
  text-align: left;
+ cursor: pointer;
 }
 
 .mobile-menu__sign-in-button{
     align-self: flex-start;
-  font-family: "Roboto";
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 24px;
@@ -75,4 +76,5 @@
   height: 56px;
   border-radius: 100px;
   margin-left: 16px;
+  cursor: pointer;
 }

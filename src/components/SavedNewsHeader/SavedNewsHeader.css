@@ -27,7 +27,6 @@
 
 .saved-news__header__keywords-container {
   display: flex;
-  flex-direction: row;
   gap: 5px;
   margin-bottom: 56px;
   flex-wrap: wrap;
@@ -76,10 +75,17 @@
   }
 
   .saved-news__header__keywords-container {
+    display: block;
     margin-top: 50px;
     margin-bottom: 0;
-    flex-direction: column;
-    flex-wrap: wrap;
-    white-space: collapse;
+  }
+
+  .saved-news__header__keywords{
+    display: inline;
+  }
+
+  .saved-news__header__keywords-title{
+    display: inline;
+    padding-right: 3px;
   }
 }
