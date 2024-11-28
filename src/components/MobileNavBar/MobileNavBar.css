@@ -27,7 +27,7 @@
 }
 
 .mobile-menu__title {
-  font-family: "Roboto Slab";
+  font-family: "Roboto Slab", Arial, Helvetica, sans-serif;
   font-size: 16px;
   font-weight: 700;
   line-height: 24px;
@@ -46,7 +46,7 @@
 
 .mobile-menu__home-button{
     width: 288px;
-    font-family: "Roboto";
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 56px;

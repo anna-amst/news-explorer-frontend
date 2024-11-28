@@ -22,8 +22,6 @@
 .saved-news__card-image {
   width: 400px;
   height: 272px;
-  background: transparent url("../../assets/card/card/image_08.png") no-repeat
-    center;
   border-radius: 16px;
   margin-bottom: 20px;
   padding: 0;

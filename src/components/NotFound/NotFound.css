@@ -7,8 +7,7 @@
 }
 
 .not-found__icon {
-  background: transparent url("../../assets/ill/not-found_v1.svg") no-repeat
-    center;
+  background: transparent url("../../assets/not-found.svg") no-repeat center;
   width: 82.5px;
   height: 82.5px;
   border: none;

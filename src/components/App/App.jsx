@@ -118,12 +118,7 @@ function App() {
   return (
     <>
       <div className="page">
-        <div className="page__content">
-          <div
-            className={`page__background ${
-              location.pathname === "/saved-news" ? "page__no-bg" : ""
-            }`}
-          >
+        <div   className={`page ${location.pathname === "/saved-news" ? "no-bg" : ""}`}>
             <Header
               handleLoginClick={handleLoginClick}
               handleMobileMenuClick={handleMobileMenuClick}
@@ -132,15 +127,14 @@ function App() {
               handleSavedArticlesClick={handleSavedArticlesClick}
               handleLogOut={handleLogOut}
             />
-          </div>
           <Routes>
             <Route
               path="*"
               element={
                 <>
-                  <div className="page__background">
+
                     <Main onSearch={onSearch} />
-                  </div>
+  
                   {isSearchPerformed && (
                     <NewsCardList
                       isLoggedIn={isLoggedIn}
