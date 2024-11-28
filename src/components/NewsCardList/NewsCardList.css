@@ -80,7 +80,7 @@
 }
 
 @media screen and (min-width: 320px) and (max-width: 613px){
-  .newscards__section{
+  .newscards{
     padding: 32px 0 24px
   }
   .newscards__list{

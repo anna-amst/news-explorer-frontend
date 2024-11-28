@@ -19,18 +19,18 @@
   font-weight: 700;
   line-height: 24px;
   margin: 0;
-  padding: 30px 104px 26px;
+  padding: 30px 0 26px 104px;
   color: white;
   cursor: pointer;
 }
 
 .header__title__saved-news {
-  color:black;
+  color: black;
 }
 
-@media screen  and (min-width:613px) and (max-width:688px){
-  .header__title{
-    padding: 40px;
+@media screen  and (min-width: 613px) and (max-width: 780px) {
+  .header__title {
+    padding: 30px 0 26px 40px;
   }
 }
 
@@ -40,4 +40,3 @@
     padding: 16px;
   }
 }
-

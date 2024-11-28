@@ -34,6 +34,7 @@
   text-align: center;
   margin: 0;
   list-style: none;
+  padding: 0;
 }
 
 .footer__navigation-item {
@@ -52,6 +53,7 @@
   flex-direction: row;
   gap: 26px;
   margin: 0;
+  padding: 0;
 }
 
 .footer__icon {
@@ -82,6 +84,7 @@
 
   .footer__menu {
     justify-content: space-between;
+    gap: 20px;
   }
 
   .footer__navigation {
