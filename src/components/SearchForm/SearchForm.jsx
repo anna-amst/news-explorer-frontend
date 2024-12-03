@@ -1,14 +1,29 @@
 import "./SearchForm.css";
+import { useState } from "react";
 
-function SearchForm() {
+function SearchForm({onSearch}) {
+  const [keyword, setKeyword] = useState("");
+  const [error, setError] = useState("");
+
+  const handleInputChange =(event) => {
+    setKeyword(event.target.value);
+  };
+
+  const handleSearchClick =(e) => {
+    e.preventDefault();
+    if (!keyword) {
+      setError("Please enter a keyword");
+    } else {
+      setError("");
+      onSearch(keyword);
+    }
+  }
+
   return (
-    <div className="searchform">
-      <h1>What's going on in the world</h1>
-      <p>
-        Find the latest news on any topic and save them in your personal
-        account.
-      </p>
-    </div>
+    <form className="searchform" onSubmit={handleSearchClick}>
+      <input className="searchform__input" type="text" placeholder="Enter topic" value={keyword} onChange={handleInputChange}></input>
+      <button type="submit" className="searchform__button">Search</button>
+    </form>
   );
 
 }
