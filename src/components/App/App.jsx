@@ -71,7 +71,7 @@ function App() {
   const handleLogOut = () => {
     navigate("/");
     setIsLoggedIn(false);
-  }
+  };
 
   const handleLoginClick = () => {
     setActiveModal("login");
@@ -114,27 +114,29 @@ function App() {
     setActiveModal("register");
   };
 
-
   return (
     <>
       <div className="page">
-        <div   className={`page ${location.pathname === "/saved-news" ? "no-bg" : ""}`}>
-            <Header
-              handleLoginClick={handleLoginClick}
-              handleMobileMenuClick={handleMobileMenuClick}
-              isLoggedIn={isLoggedIn}
-              handleHomeClick={handleHomeClick}
-              handleSavedArticlesClick={handleSavedArticlesClick}
-              handleLogOut={handleLogOut}
-            />
+        <div
+          className={`page ${
+            location.pathname === "/saved-news" ? "no-bg" : ""
+          }`}
+        >
+          <Header
+            handleLoginClick={handleLoginClick}
+            handleMobileMenuClick={handleMobileMenuClick}
+            isLoggedIn={isLoggedIn}
+            handleHomeClick={handleHomeClick}
+            handleSavedArticlesClick={handleSavedArticlesClick}
+            handleLogOut={handleLogOut}
+          />
           <Routes>
             <Route
               path="*"
               element={
                 <>
+                  <Main onSearch={onSearch} />
 
-                    <Main onSearch={onSearch} />
-  
                   {isSearchPerformed && (
                     <NewsCardList
                       isLoggedIn={isLoggedIn}
