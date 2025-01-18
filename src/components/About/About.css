@@ -7,12 +7,12 @@
 }
 
 .about__image {
-  background: transparent url("../../assets/photo.png") no-repeat center;
-  background-size: cover;
+  /* background: transparent url("../../assets/avatar.png") no-repeat center;
+  background-size: cover; */
   width: 464px;
   height: 464px;
-  border-radius: 1000px;
-  box-sizing: border-box;
+  border-radius: 50%;
+  /* box-sizing: border-box; */
 }
 
 .about__info {
